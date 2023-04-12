@@ -2,16 +2,22 @@
 
 using namespace std;
 
-class Person :public Queue {
-	int age;
-	Person* next;
-};
-
+class Person;
 class Queue {
 	Person* head;
 	Person* tail;
 public:
 	Queue(Person* h = nullptr, Person* t = nullptr) :head(h), tail(t) {}
 	void queue_methods();
-	void enqueue();
+	void enqueue(Person* newTail);
+	void dequeue();
+};
+
+class Person {
+	int age;
+	Person* next;
+public:
+	void fillData();
+	void changeNext(Person* obj);
+	int getAge(Person* obj);
 };
