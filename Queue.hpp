@@ -11,6 +11,7 @@ public:
 	void queue_methods();
 	void enqueue(Person* newTail);
 	void dequeue();
+	void display();
 };
 
 class Person {
@@ -19,5 +20,6 @@ class Person {
 public:
 	void fillData();
 	void changeNext(Person* obj);
-	int getAge(Person* obj);
+	int getAge();
+	Person* getNext();
 };

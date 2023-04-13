@@ -82,3 +82,17 @@ void Queue::enqueue(Person* newTail) {
 	}
 
 }
+Person* Person::getNext() {
+	return this->next;
+}
+int Person::getAge() {
+	return this->age;
+}
+void Queue::display() {
+	Person* current = this->head;
+	while (current != nullptr) {
+		cout << current->getAge() << endl;
+		current = current->getNext();
+	}
+
+}
