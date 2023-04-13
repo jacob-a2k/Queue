@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include <conio.h>
+#include <string>
 #include "Queue.hpp"
 
 using namespace std;
@@ -61,22 +61,26 @@ char Queue:: chooseChar() {
 	return sign;
 }
 void Person::fillData() {
-	cout << "Input age: ";
 	this->age = this->putAge();
 	this->next = nullptr;
 }
 void Person::changeNext(Person* obj) {
 	this->next = obj;
 }
-int Person::putAge() {		// trzeba ta funkcje poprawic, ale to nie jest najwazniejsze
+int Person::putAge() {		// blad gdy po cyfrach wystepuje jakas litera
 	int tmp = 0;
-	cin >> tmp;
-	while (!cin.good()) {
-		cout << "Put number!" << endl;
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cin >> tmp;
+	string number;
+	bool valid = false;
+	cin.get();
+	while(!valid) {
+		cout << "Input age: ";
+		getline(cin, number);
+		valid = isValid(number);
+		if (!valid) {
+			cout << "Invalid input!" << endl;
+		}
 	}
+	tmp = stoi(number);
 	return tmp;
 }
 void Queue::enqueue(Person* newTail) {
@@ -98,7 +102,7 @@ int Person::getAge() {
 void Queue::display() {
 	Person* current = this->head;
 	while (current != nullptr) {
-		cout << current->getAge() << endl;
+		cout << current->getAge() << ", ";
 		current = current->getNext();
 	}
 }
@@ -111,4 +115,20 @@ Person* Queue::dequeue() {
 		this->head = tmp->getNext();
 	}
 	return tmp;
+}
+bool Person::isValid(string number) {
+	int size = 0;
+	bool valid = true;
+	size = number.length();
+	if (size) {
+		for (int i = 0; i < size; i++) {
+			if (!isdigit(number[i])) {
+				valid = false;
+			}
+		}
+	}
+	else {
+		valid = false;
+	}
+	return valid;
 }

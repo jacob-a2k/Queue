@@ -25,4 +25,5 @@ public:
 	int putAge();
 	Person* getNext();
 	void changeNext(Person* obj);
+	bool isValid(string number);
 };
