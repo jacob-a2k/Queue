@@ -5,10 +5,6 @@
 
 using namespace std;
 
-void menu();
-char chooseChar();
-int putAge();
-
 void Queue::queue_methods() {
 	char sign = 0;
 	while (sign != 'x') {
@@ -45,7 +41,7 @@ void Queue::queue_methods() {
 	}
 }
 
-void menu() {
+void Queue::menu() {
 	cout << "---------------QUEUE---------------" << endl;
 	cout << "Choose one of the following options" << endl;
 	cout << " +  enqueue " << endl;
@@ -53,7 +49,7 @@ void menu() {
 	cout << " x  to exit " << endl;
 	cout << " d  to display" << endl;
 }
-char chooseChar() {
+char Queue:: chooseChar() {
 	char sign;
 	cin >> sign;
 	while (sign != '+' && sign != '-' && sign != 'x' && sign != 'd') {
@@ -66,13 +62,13 @@ char chooseChar() {
 }
 void Person::fillData() {
 	cout << "Input age: ";
-	this->age = putAge();
+	this->age = this->putAge();
 	this->next = nullptr;
 }
 void Person::changeNext(Person* obj) {
 	this->next = obj;
 }
-int putAge() {		// trzeba ta funkcje poprawic, ale to nie jest najwazniejsze
+int Person::putAge() {		// trzeba ta funkcje poprawic, ale to nie jest najwazniejsze
 	int tmp = 0;
 	cin >> tmp;
 	while (!cin.good()) {

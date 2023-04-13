@@ -12,6 +12,8 @@ public:
 	void enqueue(Person* newTail);
 	Person* dequeue();
 	void display();
+	char chooseChar();
+	void menu();
 };
 
 class Person {
@@ -19,7 +21,8 @@ class Person {
 	Person* next;
 public:
 	void fillData();
-	void changeNext(Person* obj);
 	int getAge();
+	int putAge();
 	Person* getNext();
+	void changeNext(Person* obj);
 };
