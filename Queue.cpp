@@ -19,15 +19,26 @@ void Queue::queue_methods() {
 			Person* newPerson = new Person;
 			newPerson->fillData();
 			this->enqueue(newPerson);
-
 		}
 				break;
 		case '-': {
-
+			Person* tmp = this->dequeue();
+			if (tmp == nullptr) {
+				cout << "The Queue is empty! First add new element!" << endl;
+			}
+			delete tmp;
+			tmp = nullptr;
 		}
 				break;
 		case 'x':
 			break;
+		case 'd': {
+			this->display();
+			if (head == nullptr) {
+				cout << "The Queue is empty! First add new element!" << endl;
+			}
+		}
+				break;
 		default:
 			cout << "Unknow error!" << endl;
 		}
@@ -40,11 +51,12 @@ void menu() {
 	cout << " +  enqueue " << endl;
 	cout << " -  dequeue " << endl;
 	cout << " x  to exit " << endl;
+	cout << " d  to display" << endl;
 }
 char chooseChar() {
 	char sign;
 	cin >> sign;
-	while (sign != '+' && sign != '-' && sign != 'x') {
+	while (sign != '+' && sign != '-' && sign != 'x' && sign != 'd') {
 		cout << "Please input correct sign" << endl;
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -61,7 +73,7 @@ void Person::changeNext(Person* obj) {
 	this->next = obj;
 }
 int putAge() {		// trzeba ta funkcje poprawic, ale to nie jest najwazniejsze
-	int tmp = _getch();
+	int tmp = 0;
 	cin >> tmp;
 	while (!cin.good()) {
 		cout << "Put number!" << endl;
@@ -80,7 +92,6 @@ void Queue::enqueue(Person* newTail) {
 		tail->changeNext(newTail);
 		tail = newTail;
 	}
-
 }
 Person* Person::getNext() {
 	return this->next;
@@ -94,5 +105,14 @@ void Queue::display() {
 		cout << current->getAge() << endl;
 		current = current->getNext();
 	}
-
+}
+Person* Queue::dequeue() {
+	Person* tmp = this->head;
+	if (tmp == nullptr) {
+		this->tail = nullptr;
+	}
+	else {
+		this->head = tmp->getNext();
+	}
+	return tmp;
 }

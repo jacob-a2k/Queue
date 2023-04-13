@@ -10,7 +10,7 @@ public:
 	Queue(Person* h = nullptr, Person* t = nullptr) :head(h), tail(t) {}
 	void queue_methods();
 	void enqueue(Person* newTail);
-	void dequeue();
+	Person* dequeue();
 	void display();
 };
 
