@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Queue.hpp"
-#include "Person.hpp"
 
 using namespace std;
 
