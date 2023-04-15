@@ -2,6 +2,7 @@
 #include <limits>
 #include <string>
 #include "Queue.hpp"
+#include "Person.hpp"
 
 using namespace std;
 
@@ -42,7 +43,7 @@ void Queue::queue_methods() {
 }
 
 void Queue::menu() {
-	cout << "---------------QUEUE---------------" << endl;
+	cout << "\n---------------QUEUE---------------" << endl;
 	cout << "Choose one of the following options" << endl;
 	cout << " +  enqueue " << endl;
 	cout << " -  dequeue " << endl;
@@ -101,10 +102,12 @@ int Person::getAge() {
 }
 void Queue::display() {
 	Person* current = this->head;
+	cout << endl;
 	while (current != nullptr) {
 		cout << current->getAge() << ", ";
 		current = current->getNext();
 	}
+	cout << endl;
 }
 Person* Queue::dequeue() {
 	Person* tmp = this->head;

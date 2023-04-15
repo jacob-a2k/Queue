@@ -1,8 +1,8 @@
 #include <iostream>
+#include "Person.hpp"		
 
 using namespace std;
 
-class Person;
 class Queue {
 	Person* head;
 	Person* tail;
@@ -14,16 +14,4 @@ public:
 	void display();
 	char chooseChar();
 	void menu();
-};
-
-class Person {
-	int age;
-	Person* next;
-public:
-	void fillData();
-	int getAge();
-	int putAge();
-	Person* getNext();
-	void changeNext(Person* obj);
-	bool isValid(string number);
 };
