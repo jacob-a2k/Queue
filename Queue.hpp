@@ -15,6 +15,5 @@ public:
 	void enqueue(Person* newTail);
 	Person* dequeue();
 	Person* getHead();
-	//void display();
 };
 #endif //QUEUE_HPP

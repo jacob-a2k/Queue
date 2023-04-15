@@ -1,11 +1,11 @@
 #include <iostream>
-#include "Queue.hpp"
+#include "ConsoleQueueDemo.hpp"
 
 using namespace std;
 
 int main() {
-	Queue que_ptr;
-	que_ptr.queue_methods();
-	//que_ptr.display();
+	Queue queue_ptr;
+	ConsoleQueueDemo theQ;
+	theQ.queue_methods(&queue_ptr);
 	return 0;
 }

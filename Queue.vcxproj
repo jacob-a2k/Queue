@@ -132,6 +132,7 @@
     <ClCompile Include="Queue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleQueueDemo.hpp" />
     <ClInclude Include="Person.hpp" />
     <ClInclude Include="Queue.hpp" />
   </ItemGroup>
