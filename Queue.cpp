@@ -6,6 +6,11 @@
 
 using namespace std;
 
+void menu();
+char chooseChar();
+void display(Queue& obj);
+bool isValid(std::string number);
+
 void Queue::queue_methods() {
 	char sign = 0;
 	while (sign != 'x') {
@@ -30,7 +35,7 @@ void Queue::queue_methods() {
 		case 'x':
 			break;
 		case 'd': {
-			this->display();
+			display(*this);
 			if (head == nullptr) {
 				cout << "The Queue is empty! First add new element!" << endl;
 			}
@@ -42,7 +47,7 @@ void Queue::queue_methods() {
 	}
 }
 
-void Queue::menu() {
+void menu() {
 	cout << "\n---------------QUEUE---------------" << endl;
 	cout << "Choose one of the following options" << endl;
 	cout << " +  enqueue " << endl;
@@ -50,7 +55,7 @@ void Queue::menu() {
 	cout << " x  to exit " << endl;
 	cout << " d  to display" << endl;
 }
-char Queue:: chooseChar() {
+char chooseChar() {
 	char sign;
 	cin >> sign;
 	while (sign != '+' && sign != '-' && sign != 'x' && sign != 'd') {
@@ -60,29 +65,6 @@ char Queue:: chooseChar() {
 		cin >> sign;
 	}
 	return sign;
-}
-void Person::fillData() {
-	this->age = this->putAge();
-	this->next = nullptr;
-}
-void Person::changeNext(Person* obj) {
-	this->next = obj;
-}
-int Person::putAge() {		// blad gdy po cyfrach wystepuje jakas litera
-	int tmp = 0;
-	string number;
-	bool valid = false;
-	cin.get();
-	while(!valid) {
-		cout << "Input age: ";
-		getline(cin, number);
-		valid = isValid(number);
-		if (!valid) {
-			cout << "Invalid input!" << endl;
-		}
-	}
-	tmp = stoi(number);
-	return tmp;
 }
 void Queue::enqueue(Person* newTail) {
 	if (head == nullptr) {
@@ -94,14 +76,8 @@ void Queue::enqueue(Person* newTail) {
 		tail = newTail;
 	}
 }
-Person* Person::getNext() {
-	return this->next;
-}
-int Person::getAge() {
-	return this->age;
-}
-void Queue::display() {
-	Person* current = this->head;
+void display(Queue& obj) {
+	Person* current = obj.getHead();
 	cout << endl;
 	while (current != nullptr) {
 		cout << current->getAge() << ", ";
@@ -119,19 +95,6 @@ Person* Queue::dequeue() {
 	}
 	return tmp;
 }
-bool Person::isValid(string number) {
-	int size = 0;
-	bool valid = true;
-	size = number.length();
-	if (size) {
-		for (int i = 0; i < size; i++) {
-			if (!isdigit(number[i])) {
-				valid = false;
-			}
-		}
-	}
-	else {
-		valid = false;
-	}
-	return valid;
+Person* Queue::getHead() {
+	return this->head;
 }

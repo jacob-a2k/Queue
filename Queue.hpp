@@ -1,3 +1,6 @@
+#ifndef QUEUE_HPP
+#define QUEUE_HPP
+
 #include <iostream>
 #include "Person.hpp"		
 
@@ -11,7 +14,7 @@ public:
 	void queue_methods();
 	void enqueue(Person* newTail);
 	Person* dequeue();
-	void display();
-	char chooseChar();
-	void menu();
+	Person* getHead();
+	//void display();
 };
+#endif //QUEUE_HPP

@@ -12,6 +12,5 @@ public:
 	int putAge();
 	Person* getNext();
 	void changeNext(Person* obj);
-	bool isValid(std::string number);
 };
 #endif	//PERSON_HPP
