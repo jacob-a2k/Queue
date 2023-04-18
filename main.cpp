@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-	Queue queue_ptr;
+	Queue queue_obj;
 	ConsoleQueueDemo theQ;
-	theQ.queue_methods(&queue_ptr);
+	theQ.queue_methods(&queue_obj);
 	return 0;
 }

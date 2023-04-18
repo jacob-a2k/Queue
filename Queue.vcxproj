@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleQueueDemo.hpp" />
+    <ClInclude Include="Node.hpp" />
     <ClInclude Include="Person.hpp" />
     <ClInclude Include="Queue.hpp" />
   </ItemGroup>

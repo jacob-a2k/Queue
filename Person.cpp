@@ -6,14 +6,10 @@ using namespace std;
 
 bool isValid(string number);
 
-void Person::fillData() {
-	this->age = this->putAge();
-	this->next = nullptr;
-}
 int Person::getAge() {
 	return this->age;
 }
-int Person::putAge() {
+void Person::putAge() {
 	int tmp = 0;
 	string number;
 	bool valid = false;
@@ -27,13 +23,7 @@ int Person::putAge() {
 		}
 	}
 	tmp = stoi(number);
-	return tmp;
-}
-Person* Person::getNext() {
-	return this->next;
-}
-void Person::changeNext(Person* obj) {
-	this->next = obj;
+	this->age = tmp;
 }
 bool isValid(string number) {
 	int size = 0;

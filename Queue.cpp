@@ -3,18 +3,20 @@
 
 using namespace std;
 
-void Queue::enqueue(Person* newTail) {
+void Queue::enqueue(Node* newTail) {
 	if (head == nullptr) {
 		head = newTail;
 		tail = newTail;
 	}
 	else {
-		tail->changeNext(newTail);
+		Node* tmp = nullptr;
+		tmp = tail->getNext();// = newTail->changeNext();
+		tmp = newTail;
 		tail = newTail;
 	}
 }
-Person* Queue::dequeue() {
-	Person* tmp = this->head;
+Node* Queue::dequeue() {
+	Node* tmp = this->head;
 	if (tmp == nullptr) {
 		this->tail = nullptr;
 	}
@@ -23,6 +25,9 @@ Person* Queue::dequeue() {
 	}
 	return tmp;
 }
-Person* Queue::getHead() {
+Node* Queue::getHead() {
 	return this->head;
+}
+Node* Queue::getTail() {
+	return this->tail;
 }

@@ -21,29 +21,30 @@ char ConsoleQueueDemo::chooseChar() {
 	}
 	return sign;
 }
-void ConsoleQueueDemo::display(Queue& obj) {
-	Person* current = obj.getHead();
+void ConsoleQueueDemo::display(Queue* obj) {
+	Node* current = obj->getHead();
 	cout << endl;
 	while (current != nullptr) {
-		cout << current->getAge() << ", ";
+		Person tmp = current->getObject();
+		cout << tmp.getAge() << ", ";
 		current = current->getNext();
 	}
 	cout << endl;
 }
-void ConsoleQueueDemo::queue_methods(Queue* queue_ptr) {
+void ConsoleQueueDemo::queue_methods(Queue* queue_obj) {
 	char sign = 0;
 	while (sign != 'x') {
 		menu();
 		sign = chooseChar();
 		switch (sign) {
 		case '+': {
-			Person* newPerson = new Person;
-			newPerson->fillData();
-			queue_ptr->enqueue(newPerson);
+			Node* newNode = new Node;
+			newNode->putObject();
+			queue_obj->enqueue(newNode);
 		}
 				break;
 		case '-': {
-			Person* tmp = queue_ptr->dequeue();
+			Node* tmp = queue_obj->dequeue();
 			if (tmp == nullptr) {
 				cout << "The Queue is empty! First add new element!" << endl;
 			}
@@ -54,8 +55,8 @@ void ConsoleQueueDemo::queue_methods(Queue* queue_ptr) {
 		case 'x':
 			break;
 		case 'd': {
-			display(*queue_ptr);
-			if (queue_ptr->getHead() == nullptr) {
+			display(queue_obj);
+			if (queue_obj->getHead() == nullptr) {
 				cout << "The Queue is empty! First add new element!" << endl;
 			}
 		}

@@ -2,18 +2,19 @@
 #define QUEUE_HPP
 
 #include <iostream>
-#include "Person.hpp"		
+#include "Node.hpp"
+#include "Person.hpp"	
 
 using namespace std;
 
 class Queue {
-	Person* head;
-	Person* tail;
+	Node* head;
+	Node* tail;
 public:
-	Queue(Person* h = nullptr, Person* t = nullptr) :head(h), tail(t) {}
-	void queue_methods();
-	void enqueue(Person* newTail);
-	Person* dequeue();
-	Person* getHead();
+	Queue(Node* h = nullptr, Node* t = nullptr) :head(h), tail(t) {}
+	void enqueue(Node* newTail);
+	Node* dequeue();
+	Node* getHead();
+	Node* getTail();
 };
 #endif //QUEUE_HPP

@@ -5,12 +5,10 @@
 
 class Person {
 	int age;
-	Person* next;
 public:
-	void fillData();
+	Person(int a = NULL) :age(a) {}
+	void fillData(); // remember to remove
 	int getAge();
-	int putAge();
-	Person* getNext();
-	void changeNext(Person* obj);
+	void putAge();
 };
 #endif	//PERSON_HPP
