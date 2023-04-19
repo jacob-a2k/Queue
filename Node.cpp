@@ -3,8 +3,8 @@
 Node* Node::getNext() {
 	return this->next;
 }
-Node* Node::chengeNext(Node* obj) {
-	return this->next = obj;
+void Node::chengeNext(Node* obj) {
+	this->next = obj;
 }
 Person Node::getObject() {
 	return this->object;

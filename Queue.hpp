@@ -4,8 +4,6 @@
 #include "Person.hpp"
 #include "Node.hpp"	
 
-using namespace std;
-
 class Queue {
 	Node* head;
 	Node* tail;

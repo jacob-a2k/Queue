@@ -1,30 +1,28 @@
 #include "Person.hpp"
 #include <string>
 
-using namespace std;
-
-bool isValid(string number);
+bool isValid(std::string number);
 
 int Person::getAge() {
 	return this->age;
 }
 void Person::putAge() {
 	int tmp = 0;
-	string number;
+	std::string number;
 	bool valid = false;
-	cin.get();
+	std::cin.get();
 	while (!valid) {
-		cout << "Input age: ";
-		getline(cin, number);
+		std::cout << "Input age: ";
+		getline(std::cin, number);
 		valid = isValid(number);
 		if (!valid) {
-			cout << "Invalid input!" << endl;
+			std::cout << "Invalid input!" << std::endl;
 		}
 	}
 	tmp = stoi(number);
 	this->age = tmp;
 }
-bool isValid(string number) {
+bool isValid(std::string number) {
 	int size = 0;
 	bool valid = true;
 	size = number.length();
