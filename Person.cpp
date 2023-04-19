@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Person.hpp"
 #include <string>
 

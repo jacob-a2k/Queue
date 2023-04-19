@@ -1,5 +1,4 @@
-#include <iostream>
-#include "ConsoleQueueDemo.hpp"
+#include "ConsoleQueueDemo.hpp"	// .cpp?
 
 using namespace std;
 

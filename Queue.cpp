@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Queue.hpp"
 
 using namespace std;
@@ -9,9 +8,7 @@ void Queue::enqueue(Node* newTail) {
 		tail = newTail;
 	}
 	else {
-		Node* tmp = nullptr;
-		tmp = tail->getNext();// = newTail->changeNext();
-		tmp = newTail;
+		tail->chengeNext(newTail);
 		tail = newTail;
 	}
 }

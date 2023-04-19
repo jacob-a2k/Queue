@@ -1,7 +1,6 @@
 #ifndef NODE_HPP
 #define NODE_HPP
 
-#include <iostream>
 #include "Person.hpp"
 
 class Node {
@@ -10,16 +9,8 @@ class Node {
 public:
 	Node(Person o = NULL, Node* n = nullptr) : object(o), next(n) {}
 	Node* getNext();
+	Node* chengeNext(Node* obj);
 	Person getObject();
 	void putObject();
 };
-Node* Node::getNext() {
-	return this->next;
-}
-Person Node::getObject() {
-	return this->object;
-}
-void Node::putObject() {
-	this->object.putAge();
-}
 #endif	//NODE_HPP

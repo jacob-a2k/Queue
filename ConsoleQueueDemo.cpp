@@ -1,6 +1,5 @@
-#include <iostream>
-#include <limits>
 #include "ConsoleQueueDemo.hpp"
+#include <limits>
 
 void ConsoleQueueDemo::menu() {
 	cout << "\n---------------QUEUE---------------" << endl;

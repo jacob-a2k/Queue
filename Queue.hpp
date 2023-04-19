@@ -1,9 +1,8 @@
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
 
-#include <iostream>
-#include "Node.hpp"
-#include "Person.hpp"	
+#include "Person.hpp"
+#include "Node.hpp"	
 
 using namespace std;
 

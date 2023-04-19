@@ -1,7 +1,6 @@
 #ifndef CONSOLEQUEUEDEMO_HPP
 #define CONSOLEQUEUEDEMO_HPP
 
-#include <iostream>
 #include "Queue.hpp"
 
 class ConsoleQueueDemo {
