@@ -1,6 +1,4 @@
-#include "ConsoleQueueDemo.hpp"	// .cpp?
-
-using namespace std;
+#include "ConsoleQueueDemo.hpp"
 
 int main() {
 	Queue queue_obj;

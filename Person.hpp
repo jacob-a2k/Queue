@@ -7,7 +7,6 @@ class Person {
 	int age;
 public:
 	Person(int a = NULL) :age(a) {}
-	void fillData(); // remember to remove
 	int getAge();
 	void putAge();
 };

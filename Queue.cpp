@@ -1,7 +1,5 @@
 #include "Queue.hpp"
 
-using namespace std;
-
 void Queue::enqueue(Node* newTail) {
 	if (head == nullptr) {
 		head = newTail;
