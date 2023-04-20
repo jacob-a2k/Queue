@@ -12,6 +12,5 @@ public:
 	void enqueue(Node* newTail);
 	Node* dequeue();
 	Node* getHead();
-	Node* getTail();
 };
 #endif //QUEUE_HPP

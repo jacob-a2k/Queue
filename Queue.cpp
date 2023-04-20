@@ -23,6 +23,3 @@ Node* Queue::dequeue() {
 Node* Queue::getHead() {
 	return this->head;
 }
-Node* Queue::getTail() {
-	return this->tail;
-}
