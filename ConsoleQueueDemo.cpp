@@ -37,9 +37,9 @@ void ConsoleQueueDemo::queue_methods(Queue* queue_obj) {
 		sign = chooseChar();
 		switch (sign) {
 		case '+': {
-			Node* newNode = new Node;
-			newNode->putObject();
-			queue_obj->enqueue(newNode);
+			Person* newPerson = new Person; // dodaje
+			newPerson->putAge();
+			queue_obj->enqueue(newPerson);
 		}
 				break;
 		case '-': {

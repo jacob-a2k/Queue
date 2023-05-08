@@ -1,13 +1,15 @@
 #include "Queue.hpp"
 
-void Queue::enqueue(Node* newTail) {
+void Queue::enqueue(Person* newPerson) {
+	Node* newNode = new Node;
+	newNode->putObject(newPerson);	// dodaje
 	if (head == nullptr) {
-		head = newTail;
-		tail = newTail;
+		head = newNode;
+		tail = newNode;
 	}
 	else {
-		tail->chengeNext(newTail);
-		tail = newTail;
+		tail->chengeNext(newNode);
+		tail = newNode;
 	}
 }
 Node* Queue::dequeue() {

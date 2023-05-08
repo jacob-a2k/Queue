@@ -9,6 +9,6 @@ void Node::chengeNext(Node* obj) {
 Person Node::getObject() {
 	return this->object;
 }
-void Node::putObject() {
-	this->object.putAge();
+void Node::putObject(Person* obj) {		// dodaje
+	this->object = *obj;
 }
