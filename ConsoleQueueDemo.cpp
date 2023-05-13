@@ -1,6 +1,7 @@
 #include "ConsoleQueueDemo.hpp"
 #include <limits>
 
+
 void ConsoleQueueDemo::menu() {
 	std::cout << "\n---------------QUEUE---------------" << std::endl;
 	std::cout << "Choose one of the following options" << std::endl;
@@ -30,6 +31,39 @@ void ConsoleQueueDemo::display(Queue* obj) {
 	}
 	std::cout << std::endl;
 }
+#include <string>
+
+bool ConsoleQueueDemo::isValidNumber(std::string number) {
+	int size = number.length();
+	bool valid = true;
+	if (size) {
+		for (int i = 0; i < size; i++) {
+			if (!isdigit(number[i])) {
+				valid = false;
+			}
+		}
+	}
+	else {
+		valid = false;
+	}
+	return valid;
+}
+int ConsoleQueueDemo::getInt() {
+	int tmp = 0;
+	std::string number;
+	bool valid = false;
+	std::cin.get();
+	while (!valid) {
+		std::cout << "Input nubmer: ";
+		getline(std::cin, number);
+		valid = isValidNumber(number);
+		if (!valid) {
+			std::cout << "Invalid input!" << std::endl;
+		}
+	}
+	tmp = stoi(number);
+	return tmp;
+}
 void ConsoleQueueDemo::queue_methods(Queue* queue_obj) {
 	char sign = 0;
 	while (sign != 'x') {
@@ -38,7 +72,8 @@ void ConsoleQueueDemo::queue_methods(Queue* queue_obj) {
 		switch (sign) {
 		case '+': {
 			Person* newPerson = new Person; // dodaje
-			newPerson->putAge();
+			int age = getInt();
+			newPerson->putAge(age);
 			queue_obj->enqueue(newPerson);
 		}
 				break;

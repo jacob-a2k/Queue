@@ -1,5 +1,7 @@
 #include "ConsoleQueueDemo.hpp"
 
+void testLoop();
+
 int main() {
 	Queue queue_obj;
 	ConsoleQueueDemo theQ;

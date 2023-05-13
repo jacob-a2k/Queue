@@ -8,6 +8,6 @@ class Person {
 public:
 	Person(int a = NULL) :age(a) {}
 	int getAge();
-	void putAge();
+	void putAge(const int number);
 };
 #endif	//PERSON_HPP

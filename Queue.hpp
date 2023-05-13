@@ -1,6 +1,7 @@
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
 
+// #include "intClass.hpp"
 #include "Person.hpp"
 #include "Node.hpp"	
 
