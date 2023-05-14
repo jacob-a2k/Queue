@@ -1,5 +1,6 @@
 #include "ConsoleQueueDemo.hpp"
 #include <limits>
+#include <crtdbg.h>
 
 
 void ConsoleQueueDemo::menu() {
@@ -48,7 +49,7 @@ bool ConsoleQueueDemo::isValidNumber(std::string number) {
 	}
 	return valid;
 }
-int ConsoleQueueDemo::getInt() {
+int ConsoleQueueDemo::putInt() {
 	int tmp = 0;
 	std::string number;
 	bool valid = false;
@@ -71,10 +72,10 @@ void ConsoleQueueDemo::queue_methods(Queue* queue_obj) {
 		sign = chooseChar();
 		switch (sign) {
 		case '+': {
-			Person* newPerson = new Person; // dodaje
-			int age = getInt();
-			newPerson->putAge(age);
+			int newNumber = putInt();
+			Person newPerson(newNumber);
 			queue_obj->enqueue(newPerson);
+
 		}
 				break;
 		case '-': {

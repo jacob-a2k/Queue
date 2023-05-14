@@ -10,7 +10,8 @@ class Queue {
 	Node* tail;
 public:
 	Queue(Node* h = nullptr, Node* t = nullptr) :head(h), tail(t) {}
-	void enqueue(Person* newPerson);	// dodaje
+	//void enqueue(Person* newPerson);	// dodaje
+	void enqueue(Person newPerson);
 	Node* dequeue();
 	Node* getHead();
 };

@@ -11,6 +11,7 @@ public:
 	Node* getNext();
 	void chengeNext(Node* obj);
 	Person getObject();
-	void putObject(Person* obj);	// dodaje
+	//void putObject(Person* obj);	// dodaje
+	void putObject(Person obj);
 };
 #endif	//NODE_HPP

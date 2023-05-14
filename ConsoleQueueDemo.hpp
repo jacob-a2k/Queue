@@ -7,7 +7,7 @@ class ConsoleQueueDemo {
 	void menu();
 	char chooseChar();
 	void display(Queue* obj);
-	int getInt();
+	int putInt();
 	bool isValidNumber(std::string);
 public:
 	void queue_methods(Queue* queue_obj);
